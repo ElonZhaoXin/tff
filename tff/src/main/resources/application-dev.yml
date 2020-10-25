@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tff?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+logging:
+  group:
+    tff: com.tff
+  level:
+    tff: debug
