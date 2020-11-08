@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +24,7 @@ public class AccountDto {
     private String email;
     private boolean confirmedAndActive;
     @NotNull
-    private Instant memberSince;
+    private LocalDateTime memberSince;
     private boolean support;
     @PhoneNumber
     private String phoneNumber;

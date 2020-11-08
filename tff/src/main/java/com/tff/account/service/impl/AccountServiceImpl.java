@@ -1,31 +1,20 @@
 package com.tff.account.service.impl;
 
-import com.tff.account.dto.AccountDto;
-import com.tff.account.model.Account;
-import com.tff.account.repo.AccountRepo;
-import com.tff.account.service.AccountService;
-import com.tff.common.api.ResultCode;
-import com.tff.common.exception.ServiceException;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.tff.account.entity.Account;
+import com.tff.account.mapper.AccountMapper;
+import com.tff.account.service.IAccountService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
 
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author tff
+ * @since 2020-11-08
+ */
 @Service
-public class AccountServiceImpl implements AccountService {
+public class AccountServiceImpl extends ServiceImpl<AccountMapper, Account> implements IAccountService {
 
-    @Autowired
-    AccountRepo accountRepo;
-    @Autowired
-    ModelMapper modelMapper;
-
-    @Override
-    public AccountDto getAccountBy(String phoneNumber) {
-        //Account account = accountRepo.findAccountByPhoneNumber(phoneNumber);
-        Account account = accountRepo.findAccountByPhoneNumberCustom(phoneNumber);
-        if (ObjectUtils.isEmpty(account)) {
-            throw new ServiceException(ResultCode.NOT_FOUND, "User with specified phonenumber not found");
-        }
-        return modelMapper.map(account, AccountDto.class);
-    }
 }

@@ -20,6 +20,8 @@
 		<swagger.version>2.9.2</swagger.version>
 		<modelmapper.version>2.3.0</modelmapper.version>
 		<guava.version>30.0-jre</guava.version>
+		<mybatis-plus.version>3.4.0</mybatis-plus.version>
+		<freemarker.version>2.3.30</freemarker.version>
 	</properties>
 
 	<dependencies>
@@ -57,10 +59,23 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 
+		<!--mybatis-plus start-->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>${mybatis-plus.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-generator</artifactId>
+			<version>${mybatis-plus.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${freemarker.version}</version>
+		</dependency>
+		<!--mybatis-plus end-->
 
 		<!--swagger api doc-->
 		<dependency>

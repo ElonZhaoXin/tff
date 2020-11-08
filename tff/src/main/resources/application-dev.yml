@@ -1,11 +1,12 @@
 server:
   port: 8080
 
+#密码见印象笔记
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/tff?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://116.196.91.182:13306/tff?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
     username: root
-    password: root
+    password:
   jpa:
     show-sql: true
 logging:
