@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -22,6 +22,8 @@
 		<guava.version>30.0-jre</guava.version>
 		<mybatis-plus.version>3.4.0</mybatis-plus.version>
 		<freemarker.version>2.3.30</freemarker.version>
+		<com.alipay.sdk.version>4.10.167.ALL</com.alipay.sdk.version>
+		<zxing.version>3.3.3</zxing.version>
 	</properties>
 
 	<dependencies>
@@ -118,6 +120,35 @@
 		</dependency>
 
 
+		<!-- 支付 alipay-->
+		<dependency>
+			<groupId>com.alipay.sdk</groupId>
+			<artifactId>alipay-sdk-java</artifactId>
+			<version>${com.alipay.sdk.version}</version>
+		</dependency>
+		<!--        <dependency>-->
+		<!--            <groupId>com.alipay.sdk</groupId>-->
+		<!--            <artifactId>alipay-easysdk</artifactId>-->
+		<!--            <version>2.0.1</version>-->
+		<!--        </dependency>-->
+
+		<!--qrcode start -->
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>${zxing.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>javase</artifactId>
+			<version>${zxing.version}</version>
+		</dependency>
+		<!--qrcode end -->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

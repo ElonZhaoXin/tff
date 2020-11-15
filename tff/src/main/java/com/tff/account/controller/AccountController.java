@@ -7,6 +7,7 @@ import com.tff.account.entity.Account;
 import com.tff.account.service.IAccountService;
 import com.tff.common.validation.PhoneNumber;
 import io.swagger.annotations.Api;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -20,11 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "账户服务")
 @RestController
 @Validated
+@RequiredArgsConstructor
 public class AccountController {
-    @Autowired
-    IAccountService accountService;
-    @Autowired
-    ModelMapper modelMapper;
+    private final IAccountService accountService;
+    private final  ModelMapper modelMapper;
+
     @GetMapping(path = "/get_account_by_phonenumber")
     public GenericAccountResponse getAccountByPhoneNumber(@RequestParam @PhoneNumber String phoneNumber) {
         Account one = accountService.getOne(new QueryWrapper<Account>().lambda().eq(Account::getPhoneNumber, phoneNumber));

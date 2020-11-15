@@ -7,10 +7,27 @@ spring:
     url: jdbc:mysql://116.196.91.182:13306/tff?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
     username: root
     password:
-  jpa:
-    show-sql: true
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    cache:
+      period: 0
+#  thymeleaf:
+#    cache: false #关闭缓存
+#    prefix: classpath:/templates/ #调整页面路径
+
 logging:
   group:
     tff: com.tff
   level:
     tff: debug
+
+
+
+alipay:
+  serverUrl: https://openapi.alipaydev.com/gateway.do
+  appId: 2016091700535551
+  privateKey: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCYPZp2UwfMaHp25hACe01QeYtF2APSSz0YvfhZV2RUIh8HhHs483Y+3E1yyaVeB8xp4uzupJfk6Rp3uW6LJ1W3V7/63S7XF8XB8nPhTirhsxsdnqOlUArai9h1fUVELQxbLFvYub2ITW47SE/ysvr94EEWX5pWYg1IVs0XjCq+IvbXid5Xrms1s9kwpxhro/9yFbkjucJz0M35mbuB2uKYHlbRVSgfQFHMwx+iI7/dDQ9nSaOC9OtzEZBKRCgUm0bRNtcwcxT0ZiTVhUSWMQECTtfKrmM2QToylaDCsTyvQCfalYlCPzOkMKotYXXTnU5S6KeKkA/1FNbHNgBoYymLAgMBAAECggEAKVeJS5qOopa4svMU4+eh/jmTdZsMpp3h8IceGvzddO9zJ7J1V+jdcoKW0ZYqvxc1DogeOUwfJ32Zv2tutoEvCMPekXxhDO4auOljSIrWoEXoFioPXIQY/nI9jOJA3huxoEyygG8oJgyI47ZmZ4ztFeZBJpc9rTmhS8SumzdoIAupMA/Cp2gLQHzDUtmrsfpiWUXJn4yzUQ+Pkqwi0BOwk8+aHRKDq/1k88fH11EzarCDV/QwWWknA1Fc5v5Mvw4I9ETHU10Nz5peOJ4Mhy7AkmfYzyq7wwbGWjh59ftFFPYcOGnSBT+EhmBYw9nzbrTHdvf+R44W88ZioNnZwWcXAQKBgQDTIJ5hHnaSdMeGrSqqJOEwrjzSn/UZ49MOJblG2CjTKgpH6uKeETWSJidCRR4D/9gUqfGk7/T1e5Q1fOLpf30OPx4/sjbA4cV+uOUUvEkVn/7EPRwXy+uiVxFmUZFe6S9327XkqGZygu+jc/h7I8KA7s9hNd1/CRM6tNYhC/JXgQKBgQC4mPjimknrIRjqtOWPEEkyZYp2q7k5iEhsnDpANtBqmxWvSpyWtLavz59sUIk9gz9ksFFx9SbvwqLD9jqRhKL5k6r1mBfrOr5BLSZKgJMRs7GoSboC1bw8MynVdNxyC5Ubq4ePjjdg6fKZqJWYgO35bOjpIEooD6zDruKA2gTnCwKBgQCRsg7Z4pXc163haJrqs2yblYHvr+cKqMe7GZlUJFN39akGnDcq8aFQa/fnqZ7fD61kBSr2sYkP5uoOR1Kn5Ay+yhvrxOY4ERWjL6EWwCCHRdQgRDOg0F6ZtxAQ1fVF1BGn2v0ZAIVCPM12tM8i2ziclTCTWwKxaefVOXoTcBUbAQKBgQCua7wfQPG/PdKxUqPlfdnryI4Ae1nUxrTICwXvTtu3HzpqGvHCZJaJoIBec+p5ON5ZYVBTgPR9b0ckKjBE9zKW57SNwlw3Y5YJN4QKuVo9S7D99kvQCeyGZUGN85GoINGPB5BbUGF7LRKRpf1Tz98L4qBgRqZLHCR98W0LmvUu6QKBgFV3u4ZQB6m5OfVcvm/wWqKrlzYk8lv/MmJ6LDHpI6X/uU1YjaJS4dYGTVULQQlR+RIZBtW8Ec0DDuzUhvFrqnrAMbQIU5x5ErJSie+zMhZcwVKhHfiiMp0jSIemNPPyK+uMfrYa2+HwAjLTTYHyXwmF0iEomkp21SJUAuWLDhHO
+  certPath: F:\isharefox\cert\appCertPublicKey_2016091700535551.crt
+  alipayPublicCertPath: F:\isharefox\cert\alipayCertPublicKey_RSA2.crt
+  rootCertPath: F:\isharefox\cert\alipayRootCert.crt
